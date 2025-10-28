@@ -172,6 +172,7 @@ export default function Reports() {
   const margemPercentual = receitaTotal > 0 ? (resultadoTotal / receitaTotal) * 100 : 0;
 
   // 1. Evolução Mensal - Receitas vs Despesas
+  // Fix timezone - versão 2025-10-28-15:00
   const evolutionData = useMemo(() => {
     if (!filteredRevenues || !filteredExpenses) return [];
 
