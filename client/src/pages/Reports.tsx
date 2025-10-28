@@ -178,8 +178,9 @@ export default function Reports() {
     const monthlyData = new Map<string, { receitas: number; despesas: number; litros: number }>();
 
     filteredRevenues.forEach(rev => {
-      const monthKey = format(new Date(rev.date), 'yyyy-MM');
-      const monthLabel = format(new Date(rev.date), 'MMM/yy', { locale: ptBR });
+      const date = new Date(rev.date);
+      const monthKey = format(date, 'yyyy-MM');
+      const monthLabel = format(date, 'MMM/yy', { locale: ptBR });
       const current = monthlyData.get(monthKey) || { receitas: 0, despesas: 0, litros: 0 };
       current.receitas += rev.totalAmount;
       current.litros += rev.quantity || 0;
@@ -187,7 +188,8 @@ export default function Reports() {
     });
 
     filteredExpenses.forEach(exp => {
-      const monthKey = format(new Date(exp.date), 'yyyy-MM');
+      const date = new Date(exp.date);
+      const monthKey = format(date, 'yyyy-MM');
       const current = monthlyData.get(monthKey) || { receitas: 0, despesas: 0, litros: 0 };
       current.despesas += exp.amount;
       monthlyData.set(monthKey, current);
