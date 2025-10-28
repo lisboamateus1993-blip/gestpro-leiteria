@@ -179,11 +179,10 @@ export default function Reports() {
 
     filteredRevenues.forEach(rev => {
       // Tratar data como local, não UTC
-      const dateStr = typeof rev.date === 'string' ? rev.date.split('T')[0] : rev.date;
-      const [year, month, day] = dateStr.toString().split('-').map(Number);
+      const dateStr = rev.date instanceof Date ? rev.date.toISOString().split('T')[0] : rev.date.toString().split('T')[0];
+      const [year, month, day] = dateStr.split('-').map(Number);
       const date = new Date(year, month - 1, day);
       const monthKey = format(date, 'yyyy-MM');
-      const monthLabel = format(date, 'MMM/yy', { locale: ptBR });
       const current = monthlyData.get(monthKey) || { receitas: 0, despesas: 0, litros: 0 };
       current.receitas += rev.totalAmount;
       current.litros += rev.quantity || 0;
@@ -192,8 +191,8 @@ export default function Reports() {
 
     filteredExpenses.forEach(exp => {
       // Tratar data como local, não UTC
-      const dateStr = typeof exp.date === 'string' ? exp.date.split('T')[0] : exp.date;
-      const [year, month, day] = dateStr.toString().split('-').map(Number);
+      const dateStr = exp.date instanceof Date ? exp.date.toISOString().split('T')[0] : exp.date.toString().split('T')[0];
+      const [year, month, day] = dateStr.split('-').map(Number);
       const date = new Date(year, month - 1, day);
       const monthKey = format(date, 'yyyy-MM');
       const current = monthlyData.get(monthKey) || { receitas: 0, despesas: 0, litros: 0 };
