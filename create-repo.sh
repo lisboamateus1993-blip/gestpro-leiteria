@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "Para criar o repositório no GitHub:"
+echo "1. Acesse: https://github.com/new"
+echo "2. Repository name: gestpro-leiteria"
+echo "3. Description: Sistema de Controle Financeiro para Leiteria"
+echo "4. Public"
+echo "5. NÃO marque 'Initialize this repository with a README'"
+echo "6. Clique em 'Create repository'"
+echo ""
+echo "Depois execute estes comandos:"
+echo "git remote add origin https://github.com/SEU_USUARIO/gestpro-leiteria.git"
+echo "git branch -M main"
+echo "git push -u origin main"
