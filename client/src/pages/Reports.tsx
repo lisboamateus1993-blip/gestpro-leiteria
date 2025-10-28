@@ -178,7 +178,10 @@ export default function Reports() {
     const monthlyData = new Map<string, { receitas: number; despesas: number; litros: number }>();
 
     filteredRevenues.forEach(rev => {
-      const date = new Date(rev.date);
+      // Tratar data como local, não UTC
+      const dateStr = typeof rev.date === 'string' ? rev.date.split('T')[0] : rev.date;
+      const [year, month, day] = dateStr.toString().split('-').map(Number);
+      const date = new Date(year, month - 1, day);
       const monthKey = format(date, 'yyyy-MM');
       const monthLabel = format(date, 'MMM/yy', { locale: ptBR });
       const current = monthlyData.get(monthKey) || { receitas: 0, despesas: 0, litros: 0 };
@@ -188,7 +191,10 @@ export default function Reports() {
     });
 
     filteredExpenses.forEach(exp => {
-      const date = new Date(exp.date);
+      // Tratar data como local, não UTC
+      const dateStr = typeof exp.date === 'string' ? exp.date.split('T')[0] : exp.date;
+      const [year, month, day] = dateStr.toString().split('-').map(Number);
+      const date = new Date(year, month - 1, day);
       const monthKey = format(date, 'yyyy-MM');
       const current = monthlyData.get(monthKey) || { receitas: 0, despesas: 0, litros: 0 };
       current.despesas += exp.amount;
