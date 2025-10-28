@@ -179,10 +179,19 @@ export default function Reports() {
     const monthlyData = new Map<string, { receitas: number; despesas: number; litros: number }>();
 
     filteredRevenues.forEach(rev => {
-      // Tratar data como local, não UTC
-      const dateStr = rev.date instanceof Date ? rev.date.toISOString().split('T')[0] : rev.date.toString().split('T')[0];
+      // Extrair apenas ano-mês-dia, ignorando horário e timezone
+      let dateStr: string;
+      if (rev.date instanceof Date) {
+        dateStr = rev.date.toISOString().split('T')[0];
+      } else if (typeof rev.date === 'string') {
+        // Extrair YYYY-MM-DD de qualquer formato
+        const match = rev.date.match(/(\d{4})-(\d{2})-(\d{2})/);
+        dateStr = match ? `${match[1]}-${match[2]}-${match[3]}` : rev.date.split('T')[0];
+      } else {
+        dateStr = String(rev.date).split('T')[0];
+      }
       const [year, month, day] = dateStr.split('-').map(Number);
-      const date = new Date(year, month - 1, day);
+      const date = new Date(year, month - 1, day, 12, 0, 0); // Meio-dia para evitar problemas de timezone
       const monthKey = format(date, 'yyyy-MM');
       const current = monthlyData.get(monthKey) || { receitas: 0, despesas: 0, litros: 0 };
       current.receitas += rev.totalAmount;
@@ -191,10 +200,19 @@ export default function Reports() {
     });
 
     filteredExpenses.forEach(exp => {
-      // Tratar data como local, não UTC
-      const dateStr = exp.date instanceof Date ? exp.date.toISOString().split('T')[0] : exp.date.toString().split('T')[0];
+      // Extrair apenas ano-mês-dia, ignorando horário e timezone
+      let dateStr: string;
+      if (exp.date instanceof Date) {
+        dateStr = exp.date.toISOString().split('T')[0];
+      } else if (typeof exp.date === 'string') {
+        // Extrair YYYY-MM-DD de qualquer formato
+        const match = exp.date.match(/(\d{4})-(\d{2})-(\d{2})/);
+        dateStr = match ? `${match[1]}-${match[2]}-${match[3]}` : exp.date.split('T')[0];
+      } else {
+        dateStr = String(exp.date).split('T')[0];
+      }
       const [year, month, day] = dateStr.split('-').map(Number);
-      const date = new Date(year, month - 1, day);
+      const date = new Date(year, month - 1, day, 12, 0, 0); // Meio-dia para evitar problemas de timezone
       const monthKey = format(date, 'yyyy-MM');
       const current = monthlyData.get(monthKey) || { receitas: 0, despesas: 0, litros: 0 };
       current.despesas += exp.amount;
