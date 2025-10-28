@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: gestpro-leiteria-backend
+    env: node
+    buildCommand: pnpm install && pnpm build
+    startCommand: pnpm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: DATABASE_URL
+        fromDatabase:
+          name: gestpro-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: OAUTH_SERVER_URL
+        value: https://vidabiz.butterfly-effect.dev
+      - key: VITE_OAUTH_PORTAL_URL
+        value: https://vida.butterfly-effect.dev
+
+databases:
+  - name: gestpro-db
+    databaseName: gestpro_leiteria
+    user: gestpro
+

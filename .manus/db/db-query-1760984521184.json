@@ -1,0 +1,28 @@
+{
+  "query": "SELECT id, date, DATE_FORMAT(date, '%Y-%m-%d %H:%i:%s') as formatted_date, totalAmount FROM revenues LIMIT 3;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3Nu3CCYNdQAot2p.ed39d223acf8 --database 9XTkf5bsLGbTdekU6pH9wY --execute SELECT id, date, DATE_FORMAT(date, '%Y-%m-%d %H:%i:%s') as formatted_date, totalAmount FROM revenues LIMIT 3;",
+  "rows": [
+    {
+      "id": "1",
+      "date": "2025-06-01 03:00:00",
+      "formatted_date": "2025-06-01 03:00:00",
+      "totalAmount": "59219559"
+    },
+    {
+      "id": "2",
+      "date": "2025-07-01 03:00:00",
+      "formatted_date": "2025-07-01 03:00:00",
+      "totalAmount": "62516288"
+    },
+    {
+      "id": "3",
+      "date": "2025-08-01 03:00:00",
+      "formatted_date": "2025-08-01 03:00:00",
+      "totalAmount": "61356282"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tdate\tformatted_date\ttotalAmount\n1\t2025-06-01 03:00:00\t2025-06-01 03:00:00\t59219559\n2\t2025-07-01 03:00:00\t2025-07-01 03:00:00\t62516288\n3\t2025-08-01 03:00:00\t2025-08-01 03:00:00\t61356282\n",
+  "stderr": "",
+  "execution_time_ms": 420
+}

@@ -1,0 +1,26 @@
+{
+  "query": "SELECT DATE_FORMAT(date, '%Y-%m') as mes, SUM(totalAmount) as total FROM revenues WHERE date >= '2024-06-01' AND date <= '2026-05-31' GROUP BY mes ORDER BY mes;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3Nu3CCYNdQAot2p.ed39d223acf8 --database 9XTkf5bsLGbTdekU6pH9wY --execute SELECT DATE_FORMAT(date, '%Y-%m') as mes, SUM(totalAmount) as total FROM revenues WHERE date >= '2024-06-01' AND date <= '2026-05-31' GROUP BY mes ORDER BY mes;",
+  "rows": [
+    {
+      "mes": "2025-06",
+      "total": "59919559"
+    },
+    {
+      "mes": "2025-07",
+      "total": "62516288"
+    },
+    {
+      "mes": "2025-08",
+      "total": "61356282"
+    },
+    {
+      "mes": "2025-09",
+      "total": "66214551"
+    }
+  ],
+  "messages": [],
+  "stdout": "mes\ttotal\n2025-06\t59919559\n2025-07\t62516288\n2025-08\t61356282\n2025-09\t66214551\n",
+  "stderr": "",
+  "execution_time_ms": 401
+}

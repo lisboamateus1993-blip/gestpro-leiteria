@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1760964058387,
+      "tag": "0000_majestic_ghost_rider",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1760964091589,
+      "tag": "0001_sad_human_cannonball",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1760964231059,
+      "tag": "0002_nervous_lyja",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1760978934991,
+      "tag": "0003_uneven_domino",
+      "breakpoints": true
+    }
+  ]
+}

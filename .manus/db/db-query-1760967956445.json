@@ -1,0 +1,25 @@
+{
+  "query": "SELECT * FROM expenses LIMIT 10",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3Nu3CCYNdQAot2p.ed39d223acf8 --database 9XTkf5bsLGbTdekU6pH9wY --execute SELECT * FROM expenses LIMIT 10",
+  "rows": [
+    {
+      "id": "1",
+      "accountId": "9",
+      "subAccountId": "NULL",
+      "description": "FUNCIONARIOS",
+      "amount": "2878010",
+      "month": "5",
+      "year": "2025",
+      "date": "2025-06-01 00:00:00",
+      "paid": "1",
+      "notes": "NULL",
+      "importBatchId": "NULL",
+      "createdAt": "2025-10-20 13:36:07",
+      "updatedAt": "2025-10-20 13:36:07"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\taccountId\tsubAccountId\tdescription\tamount\tmonth\tyear\tdate\tpaid\tnotes\timportBatchId\tcreatedAt\tupdatedAt\n1\t9\tNULL\tFUNCIONARIOS\t2878010\t5\t2025\t2025-06-01 00:00:00\t1\tNULL\tNULL\t2025-10-20 13:36:07\t2025-10-20 13:36:07\n",
+  "stderr": "",
+  "execution_time_ms": 423
+}

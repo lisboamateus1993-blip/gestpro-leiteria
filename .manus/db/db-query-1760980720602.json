@@ -1,0 +1,115 @@
+{
+  "query": "SELECT id, code, name, type, parentId FROM accounts ORDER BY code",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3Nu3CCYNdQAot2p.ed39d223acf8 --database 9XTkf5bsLGbTdekU6pH9wY --execute SELECT id, code, name, type, parentId FROM accounts ORDER BY code",
+  "rows": [
+    {
+      "id": "9",
+      "code": "01",
+      "name": "GASTOS COM PESSOAL",
+      "type": "despesa",
+      "parentId": "5"
+    },
+    {
+      "id": "12",
+      "code": "01",
+      "name": "VETERINARIA",
+      "type": "despesa",
+      "parentId": "6"
+    },
+    {
+      "id": "30002",
+      "code": "01",
+      "name": "LEITE",
+      "type": "receita",
+      "parentId": "30001"
+    },
+    {
+      "id": "30001",
+      "code": "02",
+      "name": "PECUÁRIA",
+      "type": "receita",
+      "parentId": "NULL"
+    },
+    {
+      "id": "5",
+      "code": "02",
+      "name": "R. H. FIXOS",
+      "type": "despesa",
+      "parentId": "NULL"
+    },
+    {
+      "id": "10",
+      "code": "02",
+      "name": "ENCARGOS SOCIAIS",
+      "type": "despesa",
+      "parentId": "5"
+    },
+    {
+      "id": "30003",
+      "code": "02",
+      "name": "BOVINO",
+      "type": "receita",
+      "parentId": "30001"
+    },
+    {
+      "id": "15",
+      "code": "02",
+      "name": " MATERIAL DE MANUTENÇÃO",
+      "type": "despesa",
+      "parentId": "8"
+    },
+    {
+      "id": "11",
+      "code": "03",
+      "name": "BENEFÍCIOS SOCIAIS",
+      "type": "despesa",
+      "parentId": "5"
+    },
+    {
+      "id": "16",
+      "code": "03",
+      "name": "MATERIAL DE USO",
+      "type": "despesa",
+      "parentId": "8"
+    },
+    {
+      "id": "6",
+      "code": "04",
+      "name": "DESPESAS",
+      "type": "despesa",
+      "parentId": "NULL"
+    },
+    {
+      "id": "7",
+      "code": "05",
+      "name": "INSUMOS",
+      "type": "despesa",
+      "parentId": "NULL"
+    },
+    {
+      "id": "8",
+      "code": "06",
+      "name": "MATERIAIS",
+      "type": "despesa",
+      "parentId": "NULL"
+    },
+    {
+      "id": "13",
+      "code": "07",
+      "name": " ARRAÇOAMENTO",
+      "type": "despesa",
+      "parentId": "7"
+    },
+    {
+      "id": "14",
+      "code": "08",
+      "name": "FÁRMACOS",
+      "type": "despesa",
+      "parentId": "7"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tcode\tname\ttype\tparentId\n9\t01\tGASTOS COM PESSOAL\tdespesa\t5\n12\t01\tVETERINARIA\tdespesa\t6\n30002\t01\tLEITE\treceita\t30001\n30001\t02\tPECUÁRIA\treceita\tNULL\n5\t02\tR. H. FIXOS\tdespesa\tNULL\n10\t02\tENCARGOS SOCIAIS\tdespesa\t5\n30003\t02\tBOVINO\treceita\t30001\n15\t02\t MATERIAL DE MANUTENÇÃO\tdespesa\t8\n11\t03\tBENEFÍCIOS SOCIAIS\tdespesa\t5\n16\t03\tMATERIAL DE USO\tdespesa\t8\n6\t04\tDESPESAS\tdespesa\tNULL\n7\t05\tINSUMOS\tdespesa\tNULL\n8\t06\tMATERIAIS\tdespesa\tNULL\n13\t07\t ARRAÇOAMENTO\tdespesa\t7\n14\t08\tFÁRMACOS\tdespesa\t7\n",
+  "stderr": "",
+  "execution_time_ms": 405
+}
